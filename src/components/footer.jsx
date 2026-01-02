@@ -1,75 +1,85 @@
-import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaClock, FaFacebookF, FaInstagram, FaYoutube, FaPinterestP } from "react-icons/fa";
-
+import { FaFacebookF, FaInstagram, FaYoutube, FaPinterestP } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-red-600 text-white pt-16 pb-10 px-6 text-sm">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
-        {/* Logo & Socials */}
-        <div>
+    /* Container luar tetap memberikan sedikit ruang untuk "bingkai" di pinggir layar */
+    <div className="w-full bg-[#f8fafc] px-4 pb-4  font-sans">
       
-          <p className="text-white mb-6">
-            Cek inodmaret dan alfamrt terdekat di daerahmu hanya di website ini saja
-          </p>
-          <div className="flex gap-4 text-lg text-white">
-            <FaFacebookF className="hover:text-green-400 cursor-pointer" />
-            <FaInstagram className="hover:text-green-400 cursor-pointer" />
-            <FaPinterestP className="hover:text-green-400 cursor-pointer" />
-            <FaYoutube className="hover:text-green-400 cursor-pointer" />
+      {/* MODIFIKASI: 
+         - max-w-[98%] agar hampir menyentuh pinggir layar tapi tetap ada celah bingkai.
+         - px-12 sampai px-20 untuk memberikan kesan luas di dalam.
+      */}
+      <footer className="max-w-[999%] mx-auto bg-red-600 text-white rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden">
+        
+        <div className="pt-20 pb-12 px-8 md:px-16 lg:px-24">
+          <div className="grid md:grid-cols-4 gap-16">
+            
+            {/* Logo & Deskripsi - Dibuat lebih lebar kolomnya */}
+            <div className="md:col-span-1 space-y-8">
+              <div className="flex items-center gap-2 bg-white w-fit px-6 py-3 rounded-2xl shadow-sm">
+                 <span className="text-red-600 font-black italic tracking-tighter text-2xl">MAPS</span>
+              </div>
+              <p className="text-red-50 text-base leading-relaxed max-w-sm">
+                Solusi digital terlengkap untuk menemukan titik lokasi gerai minimarket Indomaret dan Alfamart di seluruh wilayah Pekanbaru.
+              </p>
+              <div className="flex gap-5 text-xl">
+                {/* Icon Button lebih besar */}
+                {[FaFacebookF, FaInstagram, FaPinterestP, FaYoutube].map((Icon, index) => (
+                  <div key={index} className="p-3 bg-red-500 rounded-xl hover:bg-white hover:text-red-600 transition-all cursor-pointer shadow-md">
+                    <Icon size={20} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Menu Links - Jarak antar kolom lebih lebar */}
+            <div className="flex flex-col gap-6">
+              <h4 className="font-black text-xs uppercase tracking-[0.3em] opacity-60">Eksplorasi</h4>
+              <ul className="space-y-4 text-base font-semibold">
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Beranda Utama</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Peta Interaktif</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Daftar Wilayah</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h4 className="font-black text-xs uppercase tracking-[0.3em] opacity-60">Bantuan</h4>
+              <ul className="space-y-4 text-base font-semibold">
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Panduan Pengguna</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Laporkan Lokasi</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Hubungi Admin</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h4 className="font-black text-xs uppercase tracking-[0.3em] opacity-60">Legalitas</h4>
+              <ul className="space-y-4 text-base font-semibold">
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Kebijakan Privasi</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Ketentuan Layanan</li>
+                <li className="hover:translate-x-2 transition-transform cursor-pointer w-fit">Informasi Korporat</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Garis Bawah & Copyright - Dibuat lebih lega */}
+          <div className="mt-24 pt-10 border-t border-red-500/50 flex flex-col lg:flex-row justify-between items-center gap-8 text-sm font-bold opacity-70">
+            <div className="flex flex-wrap justify-center gap-10 uppercase tracking-[0.15em]">
+              <span className="hover:text-white cursor-pointer transition-colors">Documentation</span>
+              <span className="hover:text-white cursor-pointer transition-colors">Security</span>
+              <span className="hover:text-white cursor-pointer transition-colors">System Status</span>
+            </div>
+            
+            <div className="tracking-[0.2em] uppercase text-center lg:text-right">
+              &copy; {new Date().getFullYear()} Digital Maps Pekanbaru. Built with Precision.
+            </div>
           </div>
         </div>
 
-        {/* Home */}
-        <div>
-          <h4 className="font-bold text-white mb-4">Home</h4>
-          <ul className="space-y-2 text-white">
-            <li className="hover:text-white cursor-pointer">Colour</li>
-            <li className="hover:text-white cursor-pointer">Products</li>
-            <li className="hover:text-white cursor-pointer">Inspiration</li>
-            <li className="hover:text-white cursor-pointer">Support</li>
-            <li className="hover:text-white cursor-pointer">Professional</li>
-          </ul>
+        {/* Aksesori Visual Bawah */}
+        <div className="bg-black/10 py-5 px-10 flex justify-center items-center">
+           <div className="h-1 w-20 bg-white/20 rounded-full"></div>
         </div>
-
-        {/* Services */}
-        <div>
-          <h4 className="font-bold text-white mb-4">Services</h4>
-          <ul className="space-y-2 text-white">
-            <li className="hover:text-white cursor-pointer">Find a Painter</li>
-            <li className="hover:text-white cursor-pointer">Find a Store</li>
-            <li className="hover:text-white cursor-pointer">Dulux Colour Designers</li>
-            <li className="hover:text-white cursor-pointer">Help & Advice</li>
-          </ul>
-        </div>
-
-        {/* About */}
-        <div>
-          <h4 className="font-bold text-white mb-4">About Us</h4>
-          <ul className="space-y-2 text-white">
-            <li className="hover:text-white cursor-pointer">Contact Us</li>
-            <li className="hover:text-white cursor-pointer">Manage My Account</li>
-            <li className="hover:text-white cursor-pointer">News & Media</li>
-            <li className="hover:text-white cursor-pointer">Careers</li>
-            <li className="hover:text-white cursor-pointer">Colour Accuracy</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Links */}
-      <div className="max-w-7xl mx-auto mt-10 border-t border-gray-700 pt-6 flex flex-wrap justify-center gap-6 text-white">
-        <span className="hover:text-white cursor-pointer">FAQs & Returns</span>
-        <span className="hover:text-white cursor-pointer">Careers</span>
-        <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-        <span className="hover:text-white cursor-pointer">Corporate Info</span>
-        <span className="hover:text-white cursor-pointer">Recommended Sites</span>
-        <span className="hover:text-white cursor-pointer">News & Media</span>
-        <span className="hover:text-white cursor-pointer">Site Terms</span>
-      </div>
-
-      {/* Copyright */}
-      <div className="text-center mt-6 text-white">
-        &copy; {new Date().getFullYear()} Bali 88 Trans. All rights reserved.
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }
