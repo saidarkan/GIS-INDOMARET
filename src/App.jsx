@@ -14,6 +14,7 @@ const TabelPeta = React.lazy(() => import("./pages/TabelPeta"));
 const TambahData = React.lazy(() => import("./pages/TambahData"));
 const EditData = React.lazy(() => import("./pages/EditData"));
 const Kontak = React.lazy(() => import("./pages/KontakKami"));
+const DaftarPeta = React.lazy(() => import("./pages/DaftarPeta"));
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/peta" element={<Peta />} />
           <Route path="/kontak" element={<Kontak />} />
+           <Route path="/DaftarPeta" element={<DaftarPeta />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />

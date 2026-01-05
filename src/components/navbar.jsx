@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Home, Map as MapIcon } from "lucide-react";
+import { Contact2Icon, Home, Map as MapIcon, StoreIcon } from "lucide-react";
 
 export default function Navbar() {
   const location = useLocation();
@@ -83,9 +83,22 @@ export default function Navbar() {
                     `px-5 py-2 rounded-full transition-colors flex items-center gap-2 ${isActive ? "text-red-600 active-link" : "text-gray-500 hover:text-gray-900"}`
                   }
                 >
-                  <MapIcon size={14} strokeWidth={2.5} /> Kontak Kami
+                  <Contact2Icon size={14} strokeWidth={2.5} /> Kontak Kami
                 </NavLink>
               </li>
+               <li>
+                <NavLink 
+                  to="/DaftarPeta" 
+                  className={({ isActive }) => 
+                    `px-5 py-2 rounded-full transition-colors flex items-center gap-2 ${isActive ? "text-red-600 active-link" : "text-gray-500 hover:text-gray-900"}`
+                  }
+                >
+                  <StoreIcon size={14} strokeWidth={2.5} /> Daftar Toko
+                </NavLink>
+              </li>
+              
+
+              
             </ul>
           </div>
 
