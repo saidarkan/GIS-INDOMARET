@@ -24,6 +24,7 @@ export default function Sidebar() {
         <nav className="space-y-2">
           <MenuLink to="/dashboard" icon={<LayoutDashboard size={20}/>} label="Dashboard" />
           <MenuLink to="/TabelPeta" icon={<Map size={20}/>} label="Data Toko" />
+          <MenuLink to="/DaftarPetaMap" icon={<Map size={20}/>} label="Data Toko Map" />
         </nav>
       </div>
 

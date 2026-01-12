@@ -15,6 +15,7 @@ const TambahData = React.lazy(() => import("./pages/TambahData"));
 const EditData = React.lazy(() => import("./pages/EditData"));
 const Kontak = React.lazy(() => import("./pages/KontakKami"));
 const DaftarPeta = React.lazy(() => import("./pages/DaftarPeta"));
+const DaftarPetaMap = React.lazy(() => import("./pages/DaftarPetaMap"));
 
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/TabelPeta" element={<TabelPeta />} />
           <Route path="/TambahData" element={<TambahData />} />
+          <Route path="/DaftarPetaMap" element={<DaftarPetaMap />} />
           <Route path="/EditData/:id" element={<EditData />} />
         </Route>
 
